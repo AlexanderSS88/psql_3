@@ -1,15 +1,14 @@
 CREATE TABLE IF NOT EXISTS Employee (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(60) NOT NULL);
+	name VARCHAR(60) NOT NULL,
+	id_manager INTEGER REFERENCES Employee(id)
+	);
 
 CREATE TABLE IF NOT EXISTS Department (
 	id_dep SERIAL PRIMARY KEY,
 	title VARCHAR(60) NOT NULL,
-	id_empl INTEGER NOT NULL REFERENCES Employee(id));
-	
-CREATE TABLE IF NOT EXISTS Chief (
-	id_sup SERIAL PRIMARY KEY,
-	name VARCHAR(60) NOT NULL,
-	id_dep INTEGER NOT NULL REFERENCES Department(id_dep));
+	id_empl INTEGER NOT NULL REFERENCES Employee(id)
+	);
+
 	
 
