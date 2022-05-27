@@ -43,6 +43,22 @@ CREATE TABLE If NOT EXISTS Collection (
 CREATE TABLE If NOT EXISTS Collection_and_tracks (
 	id_collection INTEGER NOT NULL REFERENCES Collection(id_collection),
 	id_track INTEGER NOT NULL REFERENCES Tracks(id_track),
-	id_album INTEGER NOT NULL REFERENCES Albums(id_album),
-	CONSTRAINT Coll_and_track_and_alb_pk PRIMARY KEY (id_collection, id_track, id_album)
+	CONSTRAINT Coll_and_track_pk PRIMARY KEY (id_collection, id_track)
 	);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
